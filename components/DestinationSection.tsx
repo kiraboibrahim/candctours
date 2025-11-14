@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Destination } from "@/models/Destination";
 
 const destinations: Destination[] = [
@@ -6,42 +7,42 @@ const destinations: Destination[] = [
         name: "Murchison Falls National Park",
         location: "Northern Uganda",
         attractionsCount: 50,
-        image: "/img/destination-1.jpg",
+        image: "/img/waterfall.jpeg",
     },
     {
         id: 2,
         name: "Bwindi Impenetrable Forest",
         location: "Southwestern Uganda",
         attractionsCount: 30,
-        image: "/img/destination-2.jpg",
+        image: "/img/tourist-with-gorilla.jpeg",
     },
     {
         id: 3,
         name: "Kidepo Valley National Park",
         location: "Northeastern Uganda",
         attractionsCount: 25,
-        image: "/img/destination-3.jpg",
+        image: "/img/elephant-crowd.jpeg",
     },
     {
         id: 4,
         name: "Ssese Islands",
         location: "Lake Victoria",
         attractionsCount: 15,
-        image: "/img/destination-4.jpg",
+        image: "/img/tourist-swimming.jpeg",
     },
     {
         id: 5,
         name: "Rwenzori Mountains",
         location: "Western Uganda",
         attractionsCount: 20,
-        image: "/img/destination-5.jpg",
+        image: "/img/tourist-trek.jpeg",
     },
     {
         id: 6,
         name: "Jinja – Source of the Nile",
         location: "Eastern Uganda",
         attractionsCount: 10,
-        image: "/img/destination-6.jpg",
+        image: "/img/tourists-under-waterfall.jpeg",
     },
 ];
 
@@ -54,7 +55,13 @@ const DestinationSection = () => (
                 {destinations.map((dest) => (
                     <div key={dest.id} className="col-lg-4 col-md-6 mb-4">
                         <div className="destination-item position-relative overflow-hidden mb-2">
-                            <img className="img-fluid" src={dest.image} alt={dest.name} />
+                            <Image
+                                src={dest.image}
+                                alt={dest.name}
+                                width={500}
+                                height={350}
+                                className="w-full h-64 object-cover rounded"
+                            />
                             <a className="destination-overlay text-white text-decoration-none" href="#">
                                 <h5 className="text-white">{dest.name}</h5>
                                 <span>{dest.attractionsCount} Attractions</span>

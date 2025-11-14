@@ -14,10 +14,10 @@ const AboutSection = () => (
                         <p>Dolores lorem lorem ipsum sit et ipsum...</p>
                         <div className="row mb-4">
                             <div className="col-6">
-                                <img className="img-fluid" src="/img/about-1.jpg" />
+                                <img className="img-fluid" src="/img/spacious-rides.jpeg" />
                             </div>
                             <div className="col-6">
-                                <img className="img-fluid" src="/img/about-2.jpeg" />
+                                <img className="img-fluid" src="/img/hotel-view-with-sunset.jpeg" />
                             </div>
                         </div>
                         <a href="#" className="btn btn-primary mt-1">Book Now</a>

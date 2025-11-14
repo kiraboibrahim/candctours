@@ -17,6 +17,7 @@ import TeamSection from "@/components/TeamSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import BlogSection from "@/components/BlogSection";
 import Footer from "@/components/Footer";
+import Gallery from "@/components/Gallery";
 
 const fadeUp: Variants = {
     hidden: { opacity: 0, y: 20 },
@@ -37,6 +38,7 @@ export default function Home() {
         <BookingForm key="booking" />,
         <AboutSection key="about" />,
         <FeatureSection key="feature" />,
+        <Gallery key="gallery" />,
         <DestinationSection key="destination" />,
         <ServicesSection key="services" />,
         <PackagesSection key="packages" />,

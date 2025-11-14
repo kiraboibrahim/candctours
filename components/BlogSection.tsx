@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BlogPost } from "@/models/BlogPost";
 
 const blogPosts: BlogPost[] = [
@@ -7,7 +8,7 @@ const blogPosts: BlogPost[] = [
         author: "Admin",
         category: "Travel Tips",
         date: { day: "12", month: "Nov" },
-        image: "/img/blog-1.jpg",
+        image: "/img/tourist-with-gorilla.jpeg",
         link: "#",
     },
     {
@@ -16,7 +17,7 @@ const blogPosts: BlogPost[] = [
         author: "Admin",
         category: "Adventure",
         date: { day: "20", month: "Oct" },
-        image: "/img/blog-2.jpg",
+        image: "/img/scenery.jpeg",
         link: "#",
     },
     {
@@ -25,7 +26,7 @@ const blogPosts: BlogPost[] = [
         author: "Admin",
         category: "Culture & Adventure",
         date: { day: "05", month: "Sep" },
-        image: "/img/blog-3.jpg",
+        image: "/img/tourist-swimming.jpeg",
         link: "#",
     },
 ];
@@ -40,7 +41,13 @@ const BlogSection = () => (
                     <div key={post.id} className="col-lg-4 col-md-6 mb-4 pb-2">
                         <div className="blog-item">
                             <div className="position-relative">
-                                <img className="img-fluid w-100" src={post.image} alt={post.title} />
+                                <Image
+                                    src={post.image}
+                                    alt={post.title}
+                                    width={600}
+                                    height={400}
+                                    className="w-full h-64 object-cover rounded-t-lg"
+                                />
                                 <div className="blog-date">
                                     <h6 className="font-weight-bold mb-n1">{post.date.day}</h6>
                                     <small className="text-white text-uppercase">{post.date.month}</small>
