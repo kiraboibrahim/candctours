@@ -43,7 +43,6 @@ export default function Home() {
         <PackagesSection key="packages" />,
         <SpecialOffer key="registration" />,
         <TeamSection key="team" />,
-        <TestimonialSection key="testimonial" />,
         <BlogSection key="blog" />,
     ];
 
