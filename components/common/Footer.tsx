@@ -14,10 +14,17 @@ import {
     faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { submitNewsletter } from "../../services/api";
-import { CONTACTS } from "@/app/data";
+import siteConfig, { CONTACTS } from "@/app/data";
+
 const Footer: React.FC = () => {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
+    const socialIcons = [
+        { icon: faFacebookF, key: "facebook" },
+        { icon: faTwitter, key: "twitter" },
+        { icon: faLinkedinIn, key: "linkedin" },
+        { icon: faInstagram, key: "instagram" },
+    ];
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
@@ -51,14 +58,12 @@ const Footer: React.FC = () => {
                         {/* Brand & Social */}
                         <div className="w-full lg:w-4/12 md:w-1/2 px-4 mb-12">
                             <a href="#" className="inline-block mb-2">
-                                <h1 className="text-[1.5rem] font-bold leading-[1.2] mb-2">
-                                    <span className="text-white">TRIP</span>{" "}
-                                    <span className="text-[#7AB730]">TONIC</span>{" "}
-                                    <span className="text-[#28a745]">SAFARIS</span>
+                                <h1 className="text-[1.5rem] font-bold leading-[1.2] bg-gradient-to-r from-[#7AB730] to-[#527a20] bg-clip-text text-transparent mb-2">
+                                    {siteConfig.company.name}
                                 </h1>
                             </a>
                             <p className="leading-[1.5] mb-4">
-                                Trip Tonic Safaris offers immersive safari experiences in Uganda&lsquo;s
+                                {siteConfig.company.name} offers immersive safari experiences in Uganda&lsquo;s
                                 most iconic national parks. Explore wildlife, breathtaking
                                 landscapes, and luxury lodges with expert guides.
                             </p>
@@ -68,16 +73,21 @@ const Footer: React.FC = () => {
                                 Follow Us
                             </h6>
                             <div className="flex justify-start">
-                                {[faTwitter, faFacebookF, faLinkedinIn, faInstagram].map(
-                                    (icon, i) => (
-
-                                        <a key={i}
-                                            className="inline-flex items-center justify-center w-[36px] h-[36px] text-center border border-[#7AB730] text-[#7AB730] mr-2 transition-all duration-150 hover:bg-[#7AB730] hover:text-white"
-                                            href="#"
-                                        >
-                                            <FontAwesomeIcon icon={icon} />
-                                        </a>
-                                    )
+                                {socialIcons.map(
+                                    ({ icon, key }) => {
+                                        const url = (siteConfig.socials as any)[key];
+                                        return url ? (
+                                            <a
+                                                key={key}
+                                                className="inline-flex items-center justify-center w-[36px] h-[36px] text-center border border-[#7AB730] text-[#7AB730] mr-2 transition-all duration-150 hover:bg-[#7AB730] hover:text-white"
+                                                href={url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <FontAwesomeIcon icon={icon} />
+                                            </a>
+                                        ) : null;
+                                    }
                                 )}
                             </div>
                         </div>
@@ -142,15 +152,15 @@ const Footer: React.FC = () => {
                             </h5>
                             <p className="text-white/50 mb-4">
                                 <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
-                                {CONTACTS.location}
+                                {siteConfig.contacts.location}
                             </p>
                             <p className="text-white/50 mb-4">
                                 <FontAwesomeIcon icon={faPhoneAlt} className="mr-2" />
-                                {CONTACTS.phoneNumber}
+                                {siteConfig.contacts.phoneNumber}
                             </p>
                             <p className="text-white/50 mb-4">
                                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                                {CONTACTS.email}
+                                {siteConfig.contacts.email}
                             </p>
 
                             <h6
@@ -199,7 +209,7 @@ const Footer: React.FC = () => {
                             <p className="m-0 text-white/50">
                                 &copy; {new Date().getFullYear()}{" "}
                                 <a href="#" className="text-white no-underline hover:underline">
-                                    Trip Tonic Safaris
+                                    {siteConfig.company.name}
                                 </a>
                                 . All Rights Reserved.
                             </p>

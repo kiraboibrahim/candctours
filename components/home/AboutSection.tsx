@@ -1,3 +1,5 @@
+import siteConfig from "@/app/data";
+
 const AboutSection = () => (
     <div className="w-full py-5" id="about">
         <div className="max-w-[1140px] mx-auto px-[15px] pt-5">
@@ -23,8 +25,8 @@ const AboutSection = () => (
                             Experience Uganda&lsquo;s Wonders with Our Expertly Curated Safari Packages
                         </h1>
                         <p className="mt-0 mb-4 text-[#6c757d]">
-                            Trip Tonic Safaris specializes in creating unforgettable safari adventures
-                            in Uganda's national parks. From wildlife encounters and scenic landscapes
+                            {siteConfig.company.name} specializes in creating unforgettable safari adventures
+                            in Uganda&lsquo;s national parks. From wildlife encounters and scenic landscapes
                             to luxury lodges and guided tours. We offer personalized experiences
                             tailored to your budget and schedule.
                         </p>

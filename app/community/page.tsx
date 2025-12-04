@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faEnvelope, faComments, faHeart, faCamera, faGlobe, faQuoteLeft, faPaperPlane, faUserFriends, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faYoutube, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import siteConfig from "../data";
 
 const CommunityPage = () => {
     const socialLinks = [
@@ -75,7 +76,7 @@ const CommunityPage = () => {
                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.15"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
                     <div className="bg-[#7AB730] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">JOIN THE ADVENTURE</div>
-                    <p className="text-[#7AB730] font-semibold tracking-widest uppercase mb-2">TripTonic Safaris</p>
+                    <p className="text-[#7AB730] font-semibold tracking-widest uppercase mb-2">{siteConfig.company.name}</p>
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Community</h1>
                     <p className="text-gray-300 max-w-2xl">Connect with fellow travelers, share experiences, and become part of our growing safari family</p>
                 </div>

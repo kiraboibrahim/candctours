@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import siteConfig from "@/app/data";
 
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -75,13 +76,10 @@ const Navbar = () => {
             <div className="lg:max-w-[960px] max-w-full mx-auto relative p-0 lg:px-3" style={{ zIndex: 9 }}>
                 <nav className="relative flex flex-wrap items-center justify-between bg-white shadow-[0_0.5rem_1rem_rgba(0,0,0,0.15)] py-2 lg:py-0 px-12 lg:px-4">
                     <Link href="/" className="my-auto py-[0.3125rem] mr-4 leading-[inherit] whitespace-nowrap hover:no-underline">
-                        <h1 className="m-0 font-bold tracking-wide text-xl leading-[1.2]">
-                            <span className="text-[#212121]">Trip</span>
-                            <span className="text-[#7AB730] ml-1">Tonic</span>
-                            <span className="text-[#28a745] ml-2 font-bold">Safaris</span>
+                        <h1 className="m-0 font-bold tracking-wide text-xl leading-[1.2] bg-gradient-to-r from-[#7AB730] to-[#527a20] bg-clip-text text-transparent">
+                            {siteConfig.company.name}
                         </h1>
                     </Link>
-
                     {/* Mobile Toggler */}
                     <button
                         title="Toggle navigation"

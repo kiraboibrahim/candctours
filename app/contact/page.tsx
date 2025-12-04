@@ -2,40 +2,40 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faLocationDot, faClock, faBolt, faCheck, faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-import { SOCIALS, CONTACTS } from "../data";
+import siteConfig, { SOCIALS, CONTACTS } from "../data";
 const ContactPage = () => {
     const contactInfo = [
         {
             icon: faPhone,
             label: "Phone",
-            value: CONTACTS.phoneNumber,
+            value: siteConfig.contacts.phoneNumber,
             subtext: "Mon-Sat, 8am-6pm EAT"
         },
         {
             icon: faEnvelope,
             label: "Email",
-            value: CONTACTS.email,
+            value: siteConfig.contacts.email,
             subtext: "We reply within 24 hours"
         },
         {
             icon: faLocationDot,
             label: "Address",
-            value: CONTACTS.location,
+            value: siteConfig.contacts.location,
             subtext: "East Africa"
         },
         {
             icon: faClock,
             label: "Business Hours",
-            value: "Mon - Sat: 8AM - 6PM",
+            value: siteConfig.contacts.businessHours,
             subtext: "Sunday: By appointment"
         }
     ];
 
     const socialLinks = [
-        { name: "Facebook", icon: faFacebook },
-        { name: "Instagram", icon: faInstagram },
-        { name: "Twitter", icon: faTwitter },
-        { name: "WhatsApp", icon: faWhatsapp }
+        { name: "Facebook", icon: faFacebook, key: "facebook" },
+        { name: "Instagram", icon: faInstagram, key: "instagram" },
+        { name: "Twitter", icon: faTwitter, key: "twitter" },
+        { name: "WhatsApp", icon: faWhatsapp, key: "whatsapp" }
     ];
 
     const contactReasons = [
@@ -54,7 +54,7 @@ const ContactPage = () => {
                 <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.15"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }}></div>
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
                     <div className="bg-[#7AB730] text-white text-xs font-bold px-4 py-1 rounded-full mb-4">GET IN TOUCH</div>
-                    <p className="text-[#7AB730] font-semibold tracking-widest uppercase mb-2">TripTonic Safaris</p>
+                    <p className="text-[#7AB730] font-semibold tracking-widest uppercase mb-2">{siteConfig.company.name}</p>
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
                     <p className="text-gray-300 max-w-2xl">We&apos;re here to help you plan your next unforgettable safari experience</p>
                 </div>
@@ -154,16 +154,22 @@ const ContactPage = () => {
                                 Stay connected and get inspired for your next safari. Follow us on social media for travel tips, wildlife photos, and exclusive offers.
                             </p>
                             <div className="flex gap-3">
-                                {socialLinks.map((social, i) => (
-                                    <a
-                                        key={i}
-                                        href="#"
-                                        className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
-                                        title={social.name}
-                                    >
-                                        <FontAwesomeIcon icon={social.icon} className="text-lg" />
-                                    </a>
-                                ))}
+                                {socialLinks
+                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                    .filter(social => (siteConfig.socials as any)[social.key])
+                                    .map((social, i) => (
+                                        <a
+                                            key={i}
+                                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                            href={(siteConfig.socials as any)[social.key]}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+                                            title={social.name}
+                                        >
+                                            <FontAwesomeIcon icon={social.icon} className="text-lg" />
+                                        </a>
+                                    ))}
                             </div>
                         </div>
 

@@ -10,7 +10,7 @@ import { TeamMember } from '@/models/TeamMember';
 
 const teamMembers: TeamMember[] = [
     {
-        name: "Mrs. nanyombi Rehema Golooba",
+        name: "Ms Atuhaire Caroline",
         socials: {
             facebook: "",
             linkedin: "",
@@ -19,32 +19,8 @@ const teamMembers: TeamMember[] = [
 
         },
         picture: "/img/team/mrs-rehema.jpeg",
-        designation: "Chief Executive Officer"
-    },
-    {
-        name: "Mr. Golooba Haruna",
-        socials: {
-            facebook: "",
-            linkedin: "",
-            twitter: "",
-            instagram: "",
-
-        },
-        picture: "/img/team/mr-haruna.jpeg",
         designation: "Director"
     },
-    {
-        name: "Mr. Karitwe Abdu",
-        socials: {
-            facebook: "",
-            linkedin: "",
-            twitter: "",
-            instagram: "",
-
-        },
-        picture: "/img/team/mr-karitwe-abdul.jpeg",
-        designation: "Tour Officer"
-    }
 ]
 const TeamSection = () => {
     const socialIcons: Record<string, IconDefinition> = {

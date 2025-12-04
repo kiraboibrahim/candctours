@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Slide } from "@/models/Slide";
 import Link from "next/link";
+import siteConfig from "@/app/data";
 
 export const slides: Slide[] = [
     {
@@ -84,7 +85,7 @@ const Carousel: React.FC = () => {
                                         textShadow: '2px 2px 4px rgba(0,0,0,0.8)'
                                     }}
                                 >
-                                    Trip Tonic Safaris - Uganda
+                                    {siteConfig.company.name} - Uganda
                                 </h4>
                                 <h1
                                     className="text-[3.5rem] max-[1200px]:text-[calc(1.475rem_+_2.7vw)] font-light leading-[1.2] text-white mb-0 md:mb-4"
