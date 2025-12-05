@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faLocationDot, faClock, faBolt, faCheck, faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
-import siteConfig, { SOCIALS, CONTACTS } from "../siteConfig";
+import siteConfig from "../siteConfig";
 const ContactPage = () => {
     const contactInfo = [
         {

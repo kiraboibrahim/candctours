@@ -14,7 +14,7 @@ import {
     faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { submitNewsletter } from "../../services/api";
-import siteConfig, { CONTACTS } from "@/app/siteConfig";
+import siteConfig from "@/app/siteConfig";
 
 const Footer: React.FC = () => {
     const [email, setEmail] = useState("");
