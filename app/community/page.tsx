@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faEnvelope, faComments, faHeart, faCamera, faGlobe, faQuoteLeft, faPaperPlane, faUserFriends, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faYoutube, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import siteConfig from "../data";
+import siteConfig from "../siteConfig";
 
 const CommunityPage = () => {
     const socialLinks = [

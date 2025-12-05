@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Slide } from "@/models/Slide";
 import Link from "next/link";
-import siteConfig from "@/app/data";
+import siteConfig from "@/app/siteConfig";
 
 export const slides: Slide[] = [
     {

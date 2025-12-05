@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import siteConfig from "../data";
+import siteConfig from "../siteConfig";
 
 const AboutUs = () => {
     const values = [

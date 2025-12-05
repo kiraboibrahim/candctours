@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import siteConfig from "@/app/data";
+import siteConfig from "@/app/siteConfig";
 
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);

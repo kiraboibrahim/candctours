@@ -1,4 +1,4 @@
-import siteConfig from "@/app/data";
+import siteConfig from "@/app/siteConfig";
 
 const AboutSection = () => (
     <div className="w-full py-5" id="about">

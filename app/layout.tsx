@@ -5,7 +5,7 @@ import "./global.css";
 import Navbar from "@/components/common/Navbar";
 import Topbar from "@/components/common/Topbar";
 import Footer from "@/components/common/Footer";
-import siteConfig from "./data";
+import siteConfig from "./siteConfig";
 
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
 const openSans = Open_Sans({ subsets: ['latin'], weight: ['400', '600'] });

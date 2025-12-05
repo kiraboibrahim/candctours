@@ -10,7 +10,7 @@ import { TeamMember } from '@/models/TeamMember';
 
 const teamMembers: TeamMember[] = [
     {
-        name: "Ms Atuhaire Caroline",
+        name: "Ms. Atuhaire Caroline",
         socials: {
             facebook: "",
             linkedin: "",
@@ -18,7 +18,7 @@ const teamMembers: TeamMember[] = [
             instagram: "",
 
         },
-        picture: "/img/team/mrs-rehema.jpeg",
+        picture: "/img/female-avatar.jpg",
         designation: "Director"
     },
 ]

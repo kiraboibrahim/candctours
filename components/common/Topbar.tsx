@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faTwitter, faLinkedinIn, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import siteConfig from "@/app/data";
+import siteConfig from "@/app/siteConfig";
 
 const Topbar = () => (
     <div className="w-full bg-white pt-3 hidden lg:block">

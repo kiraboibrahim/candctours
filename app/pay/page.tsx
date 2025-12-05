@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft, faCheckCircle, faUser, faCreditCard, faClipboardCheck, faShieldAlt, faLock, faHeadset } from "@fortawesome/free-solid-svg-icons";
-import siteConfig from "../data";
+import siteConfig from "../siteConfig";
 
 const PayUsPage = () => {
     const [step, setStep] = useState(1);
